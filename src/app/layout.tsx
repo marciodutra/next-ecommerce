@@ -3,6 +3,8 @@ import clsx from 'clsx';
 import type { Metadata } from 'next';  
 import { Inter } from 'next/font/google';
 import Navbar from './components/Navbar';
+import { ClerkProvider } from '@clerk/nextjs';
+import { ptBR } from '@clerk/localizations';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -18,7 +20,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <ClerkProvider localization={ptBR}>
+    <html lang="pt-br">
       <body className={clsx(inter.className, 'bg-slate-700')}>
         
         <Navbar />
@@ -27,5 +30,6 @@ export default function RootLayout({
         </main>
       </body>
     </html>
+    </ClerkProvider>
   )
 }

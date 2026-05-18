@@ -22,9 +22,7 @@ export default async function Home() {
           <Product key={product.id} product={product}></Product>
         ))}
 
-      </div>
-
-      <h1>Next E-commerce!</h1>
+      </div>      
     </div>
   );
 }
