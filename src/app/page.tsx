@@ -2,7 +2,9 @@ import { ProductType } from "@/types/ProductType";
 import Product from "./components/Product";
 
 async function getProducts() {
-  const res = await fetch('https://fakestoreapi.com/products');
+  const res = await fetch('https://fakestoreapi.com/products', {
+  cache: 'no-store',
+});
 
   if (!res.ok) {
     throw new Error('Failed to fetch products');
