@@ -16,7 +16,7 @@ export default function ProductImage({ product, fill }: ProductImageProps) {
     <Image
       src={product.image}
       fill
-      alt={product.title}
+      alt={product.name}
       className={`object-cover ${
         loading
           ? 'scale-110 blur-3xl grayscale'
@@ -29,7 +29,7 @@ export default function ProductImage({ product, fill }: ProductImageProps) {
       src={product.image}
       width={400}
       height={700}
-      alt={product.title}
+      alt={product.name}
       className={`object-cover ${
         loading
           ? 'scale-110 blur-3xl grayscale'
