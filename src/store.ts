@@ -14,16 +14,16 @@ export const useCartStore = create<CartState>()(
     persist(
         (set) => ({
             cart: [],
-            addProduct: (product) =>
+            addProduct: (item) =>
                 set((state) => {
-                    const existingProduct = state.cart.find(
-                        (p) => p.id === product.id
+                    const Product = state.cart.find(
+                        (p) => p.id === item.id
                     );
 
-                    if (existingProduct) {
+                    if (Product) {
                         const updatedCart = state.cart.map((p) => {
-                            if (p.id === product.id) {
-                                return { ...p, quantity: +1 };
+                            if (p.id === item.id) {
+                                return { ...p, quantity: p.quantity ? p.quantity + 1 : 1 };
                             }
 
                             return p;
@@ -34,7 +34,7 @@ export const useCartStore = create<CartState>()(
                         return {
                             cart: [
                                 ...state.cart,
-                                { ...product, quantity: 1 }
+                                { ...item, quantity: 1 }
                             ]
                         };
                     }
