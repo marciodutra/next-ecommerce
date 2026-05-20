@@ -12,6 +12,7 @@ const products = await stripe.products.list();
 
 const formattedProducts = await Promise.all(
   products.data.map(async (product) => {
+    
     const price = await stripe.prices.list({
       product: product.id,
     });
