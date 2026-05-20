@@ -19,7 +19,8 @@
     "react": "^18",
     "react-dom": "^18",
     "stripe": "^22.1.1",
-    "svix": "^1.94.0"
+    "svix": "^1.94.0",
+    "zustand": "^5.0.13"
   },
   "devDependencies": {
     "@types/node": "^20",
