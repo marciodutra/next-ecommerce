@@ -4,7 +4,7 @@ import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import { Webhook, WebhookRequiredHeaders } from "svix";
 
-const webhookSecret = process.env.clerk_webhook_secret || '';
+const webhookSecret = process.env.CLERK_WEBHOOK_SECRET || '';
 
 type EventType = 'user.created' | 'user.updated' | '*';
 
