@@ -4,7 +4,8 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("POSTEGRES_PRISMA_URL")
+  shadowDatabaseUrl = env("POSTEGRES_URL_NON_POOLING")
 }
 
 model User {
@@ -13,4 +14,5 @@ model User {
   attributes Json
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
+  striperCustomerId String?
 }
