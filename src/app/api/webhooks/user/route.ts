@@ -93,7 +93,7 @@ async function handler(request: Request) {
 
             create: {
                 externalId: id as string,
-                striperCustomerId: customer.id,
+                stripeCustomerId: customer.id,
                 attributes
             },
 
